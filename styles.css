@@ -181,6 +181,10 @@ html{
   bottom: 50%;
   text-shadow: #000000;
 }
+.Categorylink {
+   width: 100%;
+  aspect-ratio: 1;
+}
 
 @media only screen and (max-width: 768px) {
   .category-blob {
