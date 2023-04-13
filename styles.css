@@ -1,0 +1,245 @@
+html{
+  background-color: #f9f9f9;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom right, #60c87d, #20a0a0);
+  border-radius: 20px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 95vw;
+  top :5px;
+  z-index :5
+}
+
+.navbar-brand img {
+  height: 50px;
+}
+
+.navbar-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0 20px;
+}
+
+.search-box {
+  position: relative;
+  display: inline-block;
+}
+
+.search-txt {
+  border: none;
+  background-color: #fff;
+  color: #000000;
+  font-size: 16px;
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 250px;
+  transition: width 0.3s ease-in-out;
+}
+
+.search-btn {
+  border: none;
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+  border-radius: 25px;
+  padding: 10px 20px;
+  margin-left: -50px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.search-btn i {
+  margin-right: 5px;
+}
+
+.search-btn:hover {
+  background-color: #fff;
+  color: #60c87d;
+}
+
+.search-txt:focus {
+  width: 350px;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .navbar-center {
+    margin: 20px 0;
+    width: 100%;
+  }
+  
+  .search-box {
+    width: 100%;
+  }
+  
+  .search-txt {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
+/** ***************** HOME PAGE **/
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  padding: 50px 0;
+}
+
+.category-blob {
+  width: calc(33.33% - 150px);
+  aspect-ratio: 1;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  margin: 50px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.category-title{
+  color: #ffffff;
+  stroke: #000000;
+  stroke-width: 5px;
+  font-size: large;
+  font-weight: bold;
+  text-shadow: #000000;
+  z-index: 2;
+}
+
+.category-blob::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transform: scale(1.5);
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.category-blob:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.category-blob::after {
+  content: "";
+  width: 120%;
+  height: 120%;
+  background-color: #44a35f;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  z-index: 0;
+  border-radius: 50%;
+  opacity: 0.5;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.category-blob:hover::after {
+  transform: translateX(-50%) scale(2);
+  opacity: 0.8;
+  background-color: #005418;
+}
+
+.category-blob h3 {
+  text-shadow: #000000;
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.category-blob:hover h3 {
+  opacity: 100%;
+  transform: translateY(-50%);
+  bottom: 50%;
+  text-shadow: #000000;
+}
+
+@media only screen and (max-width: 768px) {
+  .category-blob {
+    width: calc(50% - 20px);
+    height: 100px;
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .category-blob {
+    width: calc(100% - 40px);
+    height: 100px;
+    margin: 10px 20px;
+  }
+}
+
+
+/** *********     LIST    ********/
+
+.list {
+  margin-top: 90px;
+}
+.listedRecipe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #F6F6F6;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-image {
+  flex-basis: 40%;
+  max-width: 300px;
+  aspect-ratio: 1;
+  margin: 20px;
+}
+
+.recipe-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.recipe-details {
+  flex-basis: 50%;
+  margin: 20px;
+}
+
+.recipe-name {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.recipe-description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
