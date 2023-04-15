@@ -5,6 +5,8 @@ function getRecepies (index) {
         method:"GET",
     })
   .then((response) => {
+    wait(500);
+
     if (response.ok) {
       return response.json();
     } else {
@@ -53,10 +55,10 @@ function displayData(index,data) {
               <section class="list">`)
     for (let i=0;i<data.length;i++) {
     document.write(`<div class="listedRecipe">
-                  <div class="recipe-image">
+                  <div class="recipe-image" onclick="select();">
                     <img src=${data[i].imageUrl} alt="Recipe Image">
                   </div>
-                  <div class="recipe-details">
+                  <div class="recipe-details" >
                     <h3 class="recipe-name">${data[i].name}</h3>
                     <p class="recipe-description">${data[i].description}</p>
                   </div>
@@ -65,6 +67,27 @@ function displayData(index,data) {
     document.write("</section></body></html>")
   }
   
+function search(){
+  
+  let query='/';
+  query+=document.getElementsByClassName('search-txt')[0].value;
+  console.log(query);
+  localStorage.setItem("index",query);
+  window.location.href ="./list.html";
+}
+function select(){
+  let id='//';
+  id+=1;
+  localStorage.setItem("id",id);
+  window.location.href="./recepie.html";
+}
+  function wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
   
 let index=localStorage.getItem("index");
 getRecepies(index);
