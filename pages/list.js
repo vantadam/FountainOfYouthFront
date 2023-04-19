@@ -54,9 +54,9 @@ function displayData(index,data) {
     
               <section class="list">`)
     for (let i=0;i<data.length;i++) {
-    document.write(`<div class="listedRecipe">
-                  <div class="recipe-image" onclick="select();">
-                    <img src=${data[i].imageUrl} alt="Recipe Image">
+      let selection=`select(${data[i].id})`;
+    document.write(`<div class="listedRecipe"><div class="recipe-image" onclick=${selection};>`)
+    document.write(`<img src=${data[i].imageUrl} alt="Recipe Image">
                   </div>
                   <div class="recipe-details" >
                     <h3 class="recipe-name">${data[i].name}</h3>
@@ -75,11 +75,12 @@ function search(){
   localStorage.setItem("index",query);
   window.location.href ="./list.html";
 }
-function select(){
+function select(choice){
+  console.log(choice)
   let id='//';
-  id+=1;
+  id+=choice;
   localStorage.setItem("id",id);
-  window.location.href="./recepie.html";
+  window.location.href="./recipe.html";
 }
   function wait(ms){
    var start = new Date().getTime();
