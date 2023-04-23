@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="addpage">
+<head>
+  <link rel="stylesheet" href="../styles.css">
+    <script src="addRecipe.js"></script>
+  <title>Add recipe</title>
+</head>
+<body>
+
+
+
+<p class="title1">Add recipe</p>
+<div class="card">
+  <br/>
+  <div>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" name="name" placeholder="recipe's name..">
+   <br/>
+   <label for="calories">Calories</label>
+      <input type="number" name="calories" placeholder="calories..">
+
+    <label for="prep">Preperation time</label>
+    <input type="text" name="prep" placeholder="prep time..">
+ <br/>
+
+    <label for="cook">Cooking time</label>
+    <input type="text" name="cook" placeholder="cooking time..">
+ <br/>
+
+ <label for="serves">Serves</label>
+      <input type="number" name="serves" placeholder="serves..">
+ 
+   
+ <br/>
+
+      <label for="description">Description</label>
+      <textarea name="description" placeholder="recipe's description.."> </textarea>
+
+      <label for="ingredients">Ingredients</label>
+      <textarea name="ingredients" placeholder="recipe's ingredients.."> </textarea>
+     
+      <label for="steps">Steps</label>
+      <textarea name="steps" placeholder="recipe's steps.."> </textarea>
+
+      
+  
+      <label for="category">Categories</label>
+      <select title="category" name="category">
+        <option value="tunisian">Tunisian</option>
+        <option value="vegan">vegan</option>
+        <option value="vegan">vegan</option>
+        <option value="vegan">vegan</option>
+      
+      </select>
+    
+      <button type="button" onclick="addRec()"> Add </button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

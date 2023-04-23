@@ -22,6 +22,8 @@ function getRecipe (id) {
 
 }
 function displayrecipe(index,data) {
+    let ingredients=data.ingredients.split("/")
+    let steps=data.steps.split(".")
     index = index. replace("//", "")
     document.write(`
     <html>
@@ -66,17 +68,18 @@ function displayrecipe(index,data) {
           </ul>
         </div>
         <div class="ingredients">
-          <h2>Ingredients</h2>
-          ${data.ingredients}
-        </div>
+          <h2>Ingredients</h2><ol>`);
+          for (let i=0;i<ingredients.length-1;i++){
+            document.write(`<ul>${ingredients[i]}</ul>`);
+          }
+        document.write(`</ol> </div>
         <div class="steps">
-          <h2>Steps</h2>
-         ${data.steps}
-        </div>
-      </div>
-    </body>
-</html>
-   `)
+          <h2>Steps</h2>`)
+          for (let i=0;i<steps.length-1;i++){
+            document.write(`<ul ><b>${i+1} - </b>${steps[i]}</ul>`);
+          }
+         
+        document.write("</div> </div></body></html>")
   }
   
 function search(){
@@ -101,6 +104,8 @@ function select(choice){
      end = new Date().getTime();
   }
 }
+
+
   
 let id=localStorage.getItem("id");
 getRecipe(id);
