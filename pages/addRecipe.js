@@ -7,6 +7,7 @@ function addRec(){
     let description = document.getElementsByName('description')[0].value;
     let ingredients = document.getElementsByName('ingredients')[0].value;
     let steps = document.getElementsByName('steps')[0].value;
+    let img = document.getElementsByName('imgurl')[0].value;
     let category = document.getElementsByName('category')[0].value;
     
 
@@ -19,7 +20,7 @@ function addRec(){
     "description": description,
     "ingredients": ingredients,
     "steps": steps,
-    "imageUrl": "",
+    "imageUrl": img,
     }
  
    postJSON(data)
@@ -51,5 +52,3 @@ async function postJSON(data) {
   }
 }
 
-const data = { username: "example" };
-postJSON(data);
