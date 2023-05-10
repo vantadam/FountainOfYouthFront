@@ -44,7 +44,7 @@ async function postJSON(data) {
       alert(result.errors)
     }
     else {
-      window.location.href="../index.html";
+      window.location.href="./admin.html";
     }
   } catch (error) {
     console.error("Error:", error);

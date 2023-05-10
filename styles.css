@@ -282,7 +282,7 @@ html{
 }
 
 .recipe img {
-	max-width: 100%;
+	width: 250px;;
 	height: auto;
 	border-radius: 10px;
 	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
@@ -330,6 +330,20 @@ ul, ol {
 	margin: 10px 0;
 	padding-left: 20px;
 }
+
+.delete-Button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-Button:hover {
+  background-color: #ff3333;
+}
+
 
 /* Add recipe */
 
@@ -411,4 +425,140 @@ margin: 0;
 }
 .addpage .card label {
   color: #1a7621;
+}
+
+
+
+
+.admin-container {
+  display: flex;
+  margin: 20px;
+}
+
+.admin-left-card {
+  background-color: #d6f3d6;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 0 0 auto;
+  height: 100vh;
+  width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.admin-right-card {
+  flex: 1;
+  margin-left: 320px;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+#admin-search-input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-add-recipe-button,
+.admin-logout-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.admin-add-recipe-button:hover,
+.admin-logout-button:hover {
+  background-color: #45a049;
+}
+
+.admin-item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-item-list li {
+  margin-bottom: 10px;
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 5px;
+  border-left: 4px solid #4caf50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.admin-item-list li:hover {
+  background-color: #e2e2e2;
+}
+
+.admin-item-list h3 {
+  margin: 0;
+  color: #333;
+}
+
+.admin-item-list p {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
+
+body {
+ 
+  font-family: Arial, sans-serif;
+}
+
+.login-container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-form button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #45a049;
 }
