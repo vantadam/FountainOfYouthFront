@@ -23,6 +23,7 @@ function displayData(index, data) {
     itemList.appendChild(li);
   });
 }
+/*random comment*/ 
 
 function getrec(id) {
   localStorage.setItem('id', id);
